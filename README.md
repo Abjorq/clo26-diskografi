@@ -49,9 +49,8 @@ Skriv alla queries i `SQL-inlamning.md`.
 
 - [ ] Minst 3 tabeller med primary keys och foreign keys
 - [ ] Minst 3 album med minst 3 låtar vardera
-- [ ] Normaliserad till minst 3NF
-- [ ] ER-diagram finns (bild eller länk i SQL-inlamning.md)
-- [ ] Databasen skapad med CREATE TABLE, seedat med INSERT
+- [ ] Normaliserad till 3NF
+- [ ] ER-diagram finns med i inlämningen
 - [ ] Queries 1–5 skrivna och fungerar
 - [ ] Minst en ny rad tillagd med INSERT
 - [ ] Minst en rad borttagen med DELETE
@@ -62,9 +61,9 @@ Skriv alla queries i `SQL-inlamning.md`.
 Allt i G, plus:
 
 - [ ] Queries 6–8 skrivna och fungerar
-- [ ] Databasen har minst ett many-to-many-förhållande
-- [ ] Du kan förklara din tabellstruktur muntligt
+- [ ] Du kan muntligt förklara varför du valde din tabellstruktur
 - [ ] Du kan förklara vad som händer i en JOIN
+- [ ] Databasen har minst ett many-to-many-förhållande (t.ex. låt ↔ genre, artist ↔ tour)
 
 ---
 
