@@ -23,6 +23,26 @@ Välj en artist du faktiskt gillar — det märks om du bryr dig.
 
 ---
 
+## Queries du ska skriva
+
+Skriv alla queries i `SQL-inlamning.md`.
+
+**G — queries 1–5**
+
+1. Lista alla album, sorterade efter utgivningsår
+2. Lista alla låtar på ett specifikt album (du väljer vilket)
+3. Visa hur många låtar varje album innehåller
+4. Hitta den längsta låten i hela databasen
+5. Lista alla låtar i alfabetisk ordning
+
+**VG — queries 6–8**
+
+6. Beräkna snittlängden på låtarna per album
+7. Vilket album har flest låtar?
+8. Lista alla låtar längre än 4 minuter (240 sekunder) — visa även albumtiteln
+
+---
+
 ## Krav
 
 ### G — Godkänt
@@ -30,20 +50,18 @@ Välj en artist du faktiskt gillar — det märks om du bryr dig.
 - [ ] Minst 3 tabeller med primary keys och foreign keys
 - [ ] Minst 3 album med minst 3 låtar vardera
 - [ ] Normaliserad till minst 3NF
-- [ ] Databasen är skapad med CREATE TABLE
-- [ ] Data är inlagt med INSERT
-- [ ] Du kan söka med SELECT och WHERE
-- [ ] Du har lagt till minst en ny rad med INSERT
-- [ ] Du har tagit bort minst en rad med DELETE
-- [ ] Du har uppdaterat minst en rad med UPDATE
-- [ ] Queries 1–5 körs och ger korrekt resultat
 - [ ] ER-diagram finns (bild eller länk i SQL-inlamning.md)
+- [ ] Databasen skapad med CREATE TABLE, seedat med INSERT
+- [ ] Queries 1–5 skrivna och fungerar
+- [ ] Minst en ny rad tillagd med INSERT
+- [ ] Minst en rad borttagen med DELETE
+- [ ] Minst en rad uppdaterad med UPDATE
 
 ### VG — Väl godkänt
 
 Allt i G, plus:
 
-- [ ] Queries 6–8 körs och ger korrekt resultat
+- [ ] Queries 6–8 skrivna och fungerar
 - [ ] Databasen har minst ett many-to-many-förhållande
 - [ ] Du kan förklara din tabellstruktur muntligt
 - [ ] Du kan förklara vad som händer i en JOIN
