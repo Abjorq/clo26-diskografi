@@ -1,8 +1,8 @@
 # SQL-inlämning — Diskografi
 
-**Namn:** [Ditt namn]  
-**Artist:** [Din valda artist]  
-**Datum:** [Datum]
+**Namn:** Anton Björquist
+**Artist:** Kanye West 
+**Datum:** 18/10 26
 
 ---
 
@@ -14,7 +14,36 @@
 ## 1. Skapa databasen — CREATE TABLE
 
 ```sql
---- skriv din SQL-kod här ---
+DROP TABLE IF EXISTS SONG_CONTRIBUTORS;
+DROP TABLE IF EXISTS SONGS;
+DROP TABLE IF EXISTS CONTRIBUTORS;
+DROP TABLE IF EXISTS ALBUMS;
+
+	CREATE TABLE "ALBUMS" (
+	"albumid"	INTEGER PRIMARY KEY AUTOINCREMENT,
+	"name"	TEXT NOT NULL,
+	"releasedate" DATE NOT NULL
+);
+	CREATE TABLE "CONTRIBUTORS" (
+	"contributorid" INTEGER PRIMARY KEY AUTOINCREMENT,
+	"name"	TEXT NOT NULL,
+	"role"	TEXT NOT NULL
+);
+	CREATE TABLE "SONGS" (
+    "songid" INTEGER PRIMARY KEY AUTOINCREMENT,
+	"name" TEXT NOT NULL,
+	"playTime"	INTEGER NOT NULL,
+	"albumid" INTEGER NOT NULL,
+	FOREIGN KEY ("albumid") REFERENCES ALBUMS("albumid")
+);
+	CREATE TABLE "SONG_CONTRIBUTORS" ( 
+	"contributorid" INTEGER NOT NULL,
+	"songid" INTEGER NOT NULL,
+	PRIMARY KEY ("contributorid", "songid"),
+	FOREIGN KEY ("contributorid") REFERENCES CONTRIBUTORS("contributorid"),
+	FOREIGN KEY ("songid") REFERENCES SONGS("songid")
+);
+
 
 ```
 
@@ -23,7 +52,50 @@
 ## 2. Seeda med data — INSERT
 
 ```sql
---- skriv din SQL-kod här ---
+INSERT INTO ALBUMS (name, releasedate) VALUES
+('The College Dropout', '2006-02-27'),
+('Graduation', '2009-01-13'),
+('ye', '2015-08-28');
+
+INSERT INTO CONTRIBUTORS (name, role) VALUES
+('Kanye West', 'Artist & producent'),
+('John Legend', 'Gästartist'),
+('Miri Ben-Ari', 'Violinist'),
+('Ludacris', 'Gästartist'),
+('Mos Def', 'Gästartist'),
+('Freeway', 'Gästartist'),
+('Ty Dolla Sign', 'Gästartist'),
+('Ant Clemons', 'Gästartist'),
+('PartyNextDoor', 'Gästartist');
+
+INSERT INTO SONGS (name, playTime, albumid) VALUES
+('Intro (Skit)', 19, 1),
+('We Don''t Care', 239, 1),
+('Graduation Day', 82, 1),
+('Lil Jimmy (Skit)', 53, 1),
+('Good Morning', 195, 2),
+('Champion', 168, 2),
+('Stronger', 312, 2),
+('I Thought About Killing You', 274, 3),
+('Yikes', 188, 3),
+('All Mine', 145, 3);
+
+--minskade listan av låtar och plockade ut vissa, blir för många annars.
+
+
+INSERT INTO SONG_CONTRIBUTORS (contributorid, songid) VALUES
+(1, 1),
+(1, 2),
+(1, 3),
+(2, 3),
+(3, 3),
+(1, 4),
+(4, 4),
+(1, 5),
+(1, 6),
+(5, 6),
+(6, 6),
+(1, 7);
 
 ```
 
@@ -32,20 +104,29 @@
 ## 3. Söka — SELECT
 
 ```sql
---- query 1: Lista alla album, sorterade efter år ---
+--1
+SELECT * FROM ALBUMS 
+ORDER BY releasedate ASC;
 
+--2
+SELECT * FROM SONGS
+WHERE albumid = "1";
 
---- query 2: Lista alla låtar på ett specifikt album ---
+--3
+SELECT a.name AS ALBUMS, COUNT(*) AS songs_per_album
+FROM SONGS s
+JOIN ALBUMS a ON a.albumid = s.albumid 
+GROUP BY a.name;
 
+--4
+SELECT name, playTime
+FROM SONGS 
+ORDER BY playTime DESC
+LIMIT 1;
 
---- query 3: Antal låtar per album ---
-
-
---- query 4: Längsta låten ---
-
-
---- query 5: Alla låtar sorterade alfabetiskt ---
-
+--5
+SELECT * FROM SONGS
+ORDER BY name;
 ```
 
 ---
@@ -53,8 +134,8 @@
 ## 4. Lägg till en ny rad — INSERT
 
 ```sql
---- lägg till ett nytt album eller en ny låt ---
-
+INSERT INTO SONGS (name, playTime, albumid) VALUES
+('Holiday', 185, 1),
 ```
 
 ---
@@ -62,7 +143,8 @@
 ## 5. Ta bort en rad — DELETE
 
 ```sql
---- ta bort en rad ur valfri tabell ---
+DELETE FROM SONGS
+WHERE name = 'Intro (Skit)';
 
 ```
 
@@ -71,7 +153,9 @@
 ## 6. Uppdatera en rad — UPDATE
 
 ```sql
---- uppdatera minst en rad i valfri tabell ---
+UPDATE CONTRIBUTORS
+SET role = 'Gästartist'
+WHERE name = 'Miri Bin-Ari';
 
 ```
 
