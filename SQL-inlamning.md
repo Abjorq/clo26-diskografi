@@ -7,6 +7,8 @@
 ---
 
 > Lägg länk till eller bild på ditt ER-diagram här:
+> <img width="2760" height="432" alt="er_diagram_enkel" src="https://github.com/user-attachments/assets/a2e3b0b1-7b0c-4e1f-8580-883a21f9ba31" />
+
 > `[ER-diagram](er_diagram.png)`
 
 ---
