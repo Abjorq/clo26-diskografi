@@ -1,31 +1,30 @@
 # Reflektion — Inlämning 1
 
-**Namn:** [Ditt namn]  
-**Datum:** [Datum]
+**Namn:** Anton Björquist  
+**Datum:** 18/10-26
 
 ---
 
 ## Vad var svårast?
 
-[Skriv här]
-
+Att koppla ihop en one to many och many to many relation men även att avgöra vad kopplingstabellen ska bestå av.
 ---
 
 ## Vad lärde du dig?
 
-[Skriv här]
+Skriva grundlig SQL men också relationerna mellan tabellerna i vår databas.
 
 ---
 
 ## Hur använde du SQL i praktiken — vad kändes naturligt och vad var förvirrande?
 
-[Skriv här]
+Naturligt med grunderna, syntaxen känns bra och det flyter på överlag men relationen mellan tabllerna kan vara trixiga. Även vad tabellerna ska bestå av, vilka kolumner.
 
 ---
 
 ## Om du hade mer tid — vad hade du lagt till eller gjort annorlunda?
 
-[Skriv här]
+Gjort flera tabeller och experimenterat mer med many to many.
 
 ---
 
