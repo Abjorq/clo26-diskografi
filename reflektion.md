@@ -3,6 +3,8 @@
 **Namn:** Anton Björquist  
 **Datum:** 18/10-26
 
+Jag skickar med i princip hela min SQL från DB browser som jag skrev i och klistrade in här i reflektion.md. Allt bör vara korrekt efter att jag kört allt i DB Browser som såg ut att fungera bra. Men tar gärna emot förbättringsförslag! :D
+
 ---
 
 ## Vad var svårast?
